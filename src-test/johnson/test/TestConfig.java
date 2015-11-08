@@ -9,6 +9,8 @@ import johnson.jconfig.annotations.JConfigIgnore;
 import johnson.jconfig.dom.io.EJConfigDomType;
 
 /**
+ * Тестовый класс конфигурации, демонстрирующий возможности системы.
+ *
  * @author Johnson on 07.11.2015.
  */
 @JConfigClass(
@@ -19,6 +21,7 @@ import johnson.jconfig.dom.io.EJConfigDomType;
 		systemOut = true // Попутный вывод в Sytem.out (для отладки).
 )
 @JConfigComment("Тестовые настройки приложения")
+@JConfigElement("MyMegaSuperTestUltraClass")
 public class TestConfig extends AJconfigBase {
 	@JConfigIgnore
 	public static Character SIMPLE_CHAR = 'J';
