@@ -17,6 +17,8 @@ The configuration system of the application without the need to describe the rea
 >Система принимает так же внутренние публичные статические классы и их содержимое (неограничеснная вложенность).
 
 [Пример готового файла настроек](https://github.com/Relvl/JConfig/blob/master/src-test/johnson/test/TestConfig.java "Ссылка на файл в репозитории"). Больше ни чего писать не придется.
+Пример результата в JSON: [test-config.json](https://github.com/Relvl/JConfig/blob/master/test-config.json) (Вольности в стандарте отключаемые).
+Пример результата в XML: [test-config.xml](https://github.com/Relvl/JConfig/blob/master/test-config.xml)
 
 ***
 Настройка основного класса:

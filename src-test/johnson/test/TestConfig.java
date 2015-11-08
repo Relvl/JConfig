@@ -7,6 +7,7 @@ import johnson.jconfig.annotations.JConfigComment;
 import johnson.jconfig.annotations.JConfigElement;
 import johnson.jconfig.annotations.JConfigIgnore;
 import johnson.jconfig.dom.io.EJConfigDomType;
+import johnson.jconfig.dom.io.impl.JConfigDomJSONWriter;
 
 /**
  * Тестовый класс конфигурации, демонстрирующий возможности системы.
@@ -27,7 +28,6 @@ public class TestConfig extends AJconfigBase {
 	public static Character SIMPLE_CHAR = 'J';
 	@JConfigElement("FunnyJConfig")
 	public static String SIMPLE_STRING = "jConfig is funny!";
-
 	public static Byte SIMPLE_BYTE = 127;
 	@JConfigComment("Тестовый шорт")
 	public static Short SIMPLE_SHORT = 32767;
@@ -36,6 +36,11 @@ public class TestConfig extends AJconfigBase {
 	public static Long SIMPLE_LONG = 0x7fffffffffffffffL;
 	public static Float SIMPLE_FLOAT = 1234567890.1234567890f;
 	public static Double SIMPLE_DOUBLE = 1234567890.1234567890d;
+
+	static {
+		// Разрешает JSON сериализатору использовать комментарии и прочие вольности, не разрешенные стандартом.
+		JConfigDomJSONWriter.setGenerateValidJsonOnly(false);
+	}
 
 	public static void load() {
 		loadInternal(TestConfig.class);

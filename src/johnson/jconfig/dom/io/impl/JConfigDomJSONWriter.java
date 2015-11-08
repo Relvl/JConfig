@@ -11,6 +11,13 @@ import java.nio.charset.Charset;
  * @author Johnson on 08.11.2015.
  */
 public class JConfigDomJSONWriter implements IJConfigDomWriter {
+
+	private static boolean generateValidJsonOnly = false;
+
+	public static void setGenerateValidJsonOnly(boolean generateValidJsonOnly) {
+		JConfigDomJSONWriter.generateValidJsonOnly = generateValidJsonOnly;
+	}
+
 	@Override
 	public String writeToString(JConfigDomElement element, boolean isPrettyPrint, Charset charset) {
 		StringBuilder sb = new StringBuilder("{").append(isPrettyPrint ? "\n" : "");
@@ -33,7 +40,7 @@ public class JConfigDomJSONWriter implements IJConfigDomWriter {
 		String newLine = isPrettyPrint ? "\n" : "";
 
 		// Комментарий. Экспериментальная функция, стандарт JSON не разрешает их!
-		if (isPrettyPrint && element.getComment() != null) {
+		if (isPrettyPrint && element.getComment() != null && !generateValidJsonOnly) {
 			sb.append(tabs).append("/* ").append(element.getComment()).append("*/").append(newLine);
 		}
 

@@ -28,5 +28,4 @@ public @interface JConfigClass {
 
 	/** Вывод результата сохранения так же в System.out */
 	boolean systemOut() default false;
-
 }
