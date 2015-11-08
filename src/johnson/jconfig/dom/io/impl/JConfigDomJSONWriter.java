@@ -58,6 +58,7 @@ public class JConfigDomJSONWriter implements IJConfigDomWriter {
 				sb.append("\"");
 			}
 		}
+
 		// Значение (если есть вложенные элементы)
 		else {
 			sb.append("{").append(newLine);
