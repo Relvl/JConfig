@@ -14,7 +14,7 @@ import johnson.jconfig.dom.io.EJConfigDomType;
  * @author Johnson on 07.11.2015.
  */
 @JConfigClass(
-		fileName = "config/test-config", // Имя файла конфига. К нему будет приписываться соответствующее расширение (.xml, .json) при записи в файл.
+		fileName = "test-config", // Имя файла конфига. К нему будет приписываться соответствующее расширение (.xml, .json) при записи в файл.
 		serializeTypes = {EJConfigDomType.XML, EJConfigDomType.JSON}, // Массив типов сериализации.
 		isPrettyPrinting = true, // "Человекочитаемый" вывод результата сохранения конфигов.
 		target = EJconfigLoadTarget.FILESYSTEM, // Цель загрузки (и сохранения) конфигов. RESOURCES/FILESYSTEM/URL. Сохранение возможно только для цели FILESYSTEM.

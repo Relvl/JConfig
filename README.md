@@ -1,7 +1,10 @@
 JConfig
 =======
-The configuration system of the application without the need to describe the reading and writing each particular option.  
-Система конфигурации приложения, не требующая описывать чтение и запись каждой опции.
+The configuration system of the application without the need to describe the reading and writing each particular option.
+
+Система конфигурации приложения, не требующая описывать чтение и запись каждой опции.  
+Позволяет читать и сохранять валидные XML и JSON Файлы.  
+Чтение и запись полностью автоматические, на основе Reflection API, от пользователя требуется только описать саму переменную.  
 
 
 Использование:
