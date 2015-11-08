@@ -1,0 +1,24 @@
+{
+	/* Тестовые настройки приложения*/
+	"MyMegaSuperTestUltraClass": {
+		"FunnyJConfig": "jConfig is funny!",
+		"SIMPLE_BYTE": 127,
+		/* Тестовый шорт*/
+		"SIMPLE_SHORT": 32767,
+		"SimpleInt": 2147483647,
+		"SIMPLE_LONG": 9223372036854775807,
+		"SIMPLE_FLOAT": 1.23456794E9,
+		"SIMPLE_DOUBLE": 1.2345678901234567E9,
+		/* Настройки базы данных*/
+		"DataBase": {
+			"SIMPLE_SHORT": 32767,
+			"SIMPLE_INT": 2147483647,
+			"SIMPLE_LONG": 9223372036854775807,
+			/* Настройки соединения с сервером SQL.*/
+			"ODBCConfig": {
+				/* Класс драйвера ODBC.*/
+				"Driver": "com.mysql.jdbc.Driver"
+			}
+		}
+	}
+}
