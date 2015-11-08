@@ -3,14 +3,17 @@ JConfig
 The configuration system of the application without the need to describe the reading and writing each particular option.  
 Система конфигурации приложения, не требующая описывать чтение и запись каждой опции.
 
+
 Использование:
 --------------
-- Наследоваться от `AJconfigBase.class`
+- Наследоваться от [`AJconfigBase.class`](https://github.com/Relvl/JConfig/blob/master/src/johnson/jconfig/AJconfigBase.java)
 - Определить методы `load()` и `store()`, которые будут вести к, соответственно, `loadInternal(YourConfigClass.class)` и `storeInternal(YourConfigClass.class)`.
-- Пометить класс аннотацией `@JConfigClass(fileName = "your-destionation-file")`.
+- Пометить класс аннотацией [`@JConfigClass`](https://github.com/Relvl/JConfig/blob/master/src/johnson/jconfig/annotations/JConfigClass.java)`(fileName = "your-destionation-file")`.
 - Описать нужные вам опции в виде публичных статических не-финальных полей.
 
 >Система принимает так же внутренние публичные статические классы и их содержимое (неограничеснная вложенность).
+
+[Пример готового файла настроек](https://github.com/Relvl/JConfig/blob/master/src-test/johnson/test/TestConfig.java "Ссылка на файл в репозитории"). Больше ни чего писать не придется.
 
 ***
 Настройка основного класса:
