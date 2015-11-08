@@ -1,7 +1,7 @@
 package johnson.jconfig.annotations;
 
-import johnson.jconfig.EJConfigSerializeTypes;
 import johnson.jconfig.EJconfigLoadTarget;
+import johnson.jconfig.dom.io.EJConfigDomType;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -15,12 +15,18 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 public @interface JConfigClass {
 	/** Имя файла или URL загрузки. */
-	String value();
+	String fileName();
 
-	/** Тип сериализации конфигурации. */
-	EJConfigSerializeTypes serializeType() default EJConfigSerializeTypes.XML;
+	/** Типы сериализации конфигурации. */
+	EJConfigDomType[] serializeTypes() default {EJConfigDomType.XML};
 
 	/** Цель загрузки конфига. */
-	EJconfigLoadTarget loadTarget() default EJconfigLoadTarget.FILESYSTEM;
+	EJconfigLoadTarget target() default EJconfigLoadTarget.FILESYSTEM;
+
+	/** "Человекочитаемый" вывод результата сохранения. */
+	boolean isPrettyPrinting() default true;
+
+	/** Вывод результата сохранения так же в System.out */
+	boolean systemOut() default false;
 
 }
