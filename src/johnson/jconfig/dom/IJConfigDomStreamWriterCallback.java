@@ -1,4 +1,4 @@
-package johnson.jconfig.dom.io;
+package johnson.jconfig.dom;
 
 import java.io.OutputStream;
 

@@ -49,14 +49,7 @@ public class JConfigDomJSONWriter implements IJConfigDomWriter {
 
 		// Значение (если односложное)
 		if (element.getElements().isEmpty()) {
-			// FIXME Строки нужно указывать с кавычками, а цифры - нет! isNumber.
-			if (!element.isValueIsNumber()) {
-				sb.append("\"");
-			}
-			sb.append(element.getValue());
-			if (!element.isValueIsNumber()) {
-				sb.append("\"");
-			}
+			sb.append(element.isValueIsNumber() ? "" : "\"").append(element.getValue()).append(element.isValueIsNumber() ? "" : "\"");
 		}
 
 		// Значение (если есть вложенные элементы)
@@ -64,8 +57,8 @@ public class JConfigDomJSONWriter implements IJConfigDomWriter {
 			sb.append("{").append(newLine);
 
 			for (int i = 0; i < element.getElements().size(); i++) {
-				JConfigDomElement domElement = element.getElements().get(i);
-				collectElementsRecursive(domElement, sb, level + 1, isPrettyPrint);
+				collectElementsRecursive(element.getElements().get(i), sb, level + 1, isPrettyPrint);
+				// Если это не последний элемент - обязательно запятую
 				if (i < element.getElements().size() - 1) {
 					sb.append(",");
 				}

@@ -1,7 +1,6 @@
 package johnson.jconfig.dom;
 
 import johnson.jconfig.dom.io.EJConfigDomType;
-import johnson.jconfig.dom.io.IJConfigDomStreamWriterCallback;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -25,13 +24,15 @@ public class JConfigDomDocument {
 		this.isPrettyPrint = isPrettyPrinted;
 	}
 
-	public EJConfigDomType[] getTypes() {
-		return types;
-	}
-
 	public void setTypes(EJConfigDomType... types) {
 		this.types = types;
 	}
+
+	public void build(String content){
+
+	}
+
+
 
 	public void writeToStreams(IJConfigDomStreamWriterCallback callback) throws IOException {
 		for (EJConfigDomType type : types) {

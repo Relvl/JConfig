@@ -51,7 +51,7 @@ public class TestConfig extends AJconfigBase {
 	}
 
 	public static void main(String[] args) {
-		TestConfig.store();
+		TestConfig.load();
 	}
 
 	@JConfigComment("Настройки базы данных")
